@@ -22,7 +22,9 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "check:all": "npm run test && npm run typescript && npm run lint && npm run format:check",
-    "prepublishOnly": "npm run check:all && npm run build"
+    "prepublishOnly": "npm run check:all && npm run build",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "husky": {
     "hooks": {
@@ -112,7 +114,8 @@
     "import-fresh": "^3.1.0",
     "js-yaml": "^3.13.1",
     "parse-json": "^4.0.0",
-    "path-type": "^4.0.0"
+    "path-type": "^4.0.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@babel/cli": "7.4.4",
@@ -143,5 +146,6 @@
   },
   "engines": {
     "node": ">=8"
-  }
+  },
+  "snyk": true
 }
